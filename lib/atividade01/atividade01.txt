@@ -1,0 +1,6 @@
+1 - Criar um projeto chamado funções;
+2 - Criar 4 arquivos: funções, funções sem retorno e sem parâmetro, 
+funções sem retorno e com parâmetro, funções com retorno e sem parâmetro,
+função com retorno e com parâmetro;
+3 - Para cada arquivo criar uma função show 
+4 - Chamar função show de cada arquivo no método main 
