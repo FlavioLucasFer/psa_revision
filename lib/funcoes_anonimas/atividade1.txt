@@ -1,0 +1,13 @@
+Atividade I
+
+1). Qual a diferença entre 1° e a 2° forma? Na sua opinião, o que melhorou e o que piorou?
+
+A segunda forma está desacoplada, portanto melhora manutenção, facilita a escrita de testes unitários
+e possibilita que haja reuso das operações distintas em outras partes do código fonte. Um ponto negativo
+é a necessidade de navegar entre as funções para visualizar o código completo que compõe a função "verificarAprovacao"
+
+2). O que é e para que serve parâmetros do tipo função? Em que caso utilizamos?
+
+Parâmetros do tipo função servem para que a função seja capaz de ter comportamentos diferentes que 
+serão executados por outras funções. Utilizamos em casos onde a função necessita realizar determinado comportamento
+que não depende de si e sim de outras funções, mas estas funções possuem um mesmo contexto.
