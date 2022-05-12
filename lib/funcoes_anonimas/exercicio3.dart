@@ -11,13 +11,37 @@ Exercício 02 - para cada função "hospedeira", defina uma função anônima.
 
 void main() {
   // testes exercício 01
-  // print(validateNumber(isEven));
-  // print(validateNumber(isGreaterThenZero));
-  // print(validateNumber(isPrimeNumber));
-  // print(timespent(yearsSpent));
-  // print(timespent(hoursSpent));
+  try {
+    print(validateNumber(isEven));
+  } catch (e) {
+    print('err:');
+    print(e);
+  }
+  try {
+    print(validateNumber(isGreaterThenZero));
+  } catch (e) {
+    print('err:');
+    print(e);
+  }
+  try {
+    print(timespent(yearsSpent));
+  } catch (e) {
+    print('err:');
+    print(e);
+  }
+  try {
+    print(timespent(hoursSpent));
+  } catch (e) {
+    print('err:');
+    print(e);
+  }
   // print(timespent(daysSpent));
-  // print(calculateSalary(calculateAssistantSalary));
+  try {
+    print(calculateSalary(calculateAssistantSalary));
+  } catch (e) {
+    print('err:');
+    print(e);
+  }
   // print(calculateSalary(calculateJuniorSalary));
   // print(calculateSalary(calculatePlenoSalary));
 
@@ -36,7 +60,12 @@ void main() {
 bool validateNumber(bool Function(double number) validation) {
   print('Digite um número:');
   var input = stdin.readLineSync();
-  if (input == null || double.tryParse(input) == null) return false;
+  if (input == null) {
+    throw Exception('Input is empty');
+  }
+  if (double.tryParse(input) == null) {
+    throw Exception('Cannot parse input to double');
+  }
   return validation(double.parse(input));
 }
 
@@ -65,7 +94,9 @@ bool isPrimeNumber(double number) {
 int timespent(int Function(DateTime date) validation) {
   print('Informe a data inicial:');
   var input = stdin.readLineSync();
-  if (input == null || DateTime.tryParse(input) == null) throw 'Data inválida!';
+  if (input == null || DateTime.tryParse(input) == null) {
+    throw Exception('Data inválida!');
+  }
   return validation(DateTime.parse(input));
 }
 
@@ -85,8 +116,9 @@ int hoursSpent(DateTime date) {
 double calculateSalary(double Function(int days) validation) {
   print('Informe a quantidade de dias trabalhados:');
   var input = stdin.readLineSync();
-  if (input == null || int.tryParse(input) == null)
-    throw 'Quantidade de dias inválida!';
+  if (input == null || int.tryParse(input) == null) {
+    throw Exception('Quantidade de dias inválida!');
+  }
   return validation(int.parse(input));
 }
 
